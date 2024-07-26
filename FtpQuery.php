@@ -49,7 +49,7 @@ class FtpQuery
 
     public function downloadFile($file,$save_dir=__DIR__ . '/'){
         if($file == null) return 'ERROR! function downloadFile, file name is empty!';
-        // Установка соединения
+
         $conn_id = ftp_connect($this->ftp_host);
         $login_result = ftp_login($conn_id, $this->ftp_login, $this->ftp_password);
        ftp_pasv($conn_id, true);
@@ -69,7 +69,6 @@ class FtpQuery
     }
 
     public function loadFile($file){
-// Установка соединения
         $conn_id = ftp_connect($this->ftp_host);
         $login_result = ftp_login($conn_id, $this->ftp_login, $this->ftp_password);
         ftp_pasv($conn_id, true);
